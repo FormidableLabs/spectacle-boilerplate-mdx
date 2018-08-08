@@ -1,7 +1,7 @@
 import React from 'react';
 import { Heading, Text } from 'spectacle';
 
-export default class RegularAssComponent extends React.Component {
+export default class RegularComponent extends React.Component {
   state = {
     count: 0
   };

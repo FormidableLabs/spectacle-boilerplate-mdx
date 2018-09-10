@@ -19,7 +19,7 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-transition-group": "2",
-    "spectacle": "5.0.0",
+    "spectacle": "5.1.0",
     "spectacle-renderer": "^0.0.3"
   },
   "devDependencies": {

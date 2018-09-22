@@ -1,7 +1,8 @@
 import React from 'react';
-import { Slide, Text } from 'spectacle';
+import { Slide, Text, Heading } from 'spectacle';
 import { MDXProvider } from '@mdx-js/tag'
 import components from './components';
+import theme from './theme';
 
 // DEFAULT LAYOUT
 
@@ -15,6 +16,11 @@ export const DefaultSlide = ({ children, ...rest }) => (
 
 const darkComponents = {
   ...components,
+  h2: ({ children }) => <Heading size={2} textColor={theme.screen.colors.quaternary}>{children}</Heading>,
+  h3: ({ children }) => <Heading size={3} textColor={theme.screen.colors.quaternary}>{children}</Heading>,
+  h4: ({ children }) => <Heading size={4} textColor={theme.screen.colors.quaternary}>{children}</Heading>,
+  h5: ({ children }) => <Heading size={5} textColor={theme.screen.colors.quaternary}>{children}</Heading>,
+  h6: ({ children }) => <Heading size={6} textColor={theme.screen.colors.quaternary}>{children}</Heading>,
   p: ({ children }) => <Text textColor="white">{children}</Text>
 }
 

@@ -2,27 +2,24 @@ import {Cite} from 'spectacle';
 import {DarkSlide, CodeSlide} from './slides';
 import RegularComponent from './regular-component';
 
-# Spectacle YAY
+# Spectacle MDX!
 
-
-**open the presentation/index.js file to get started**
+**open the presentation/index.mdx file to get started**
 
 ---
 export default DarkSlide
 
 export const transition = ['zoom']
 
-# Spectacle Boilerplate
-
-**but that shit is now dark and the text is inverted**
+# Write your Spectacle Presentations in Markdown
+## And seamlessly use React Components  
+**How sweet is that**  
+**(super sweet)**
 
 ---
 
 ![datboi](https://pbs.twimg.com/media/CkjFUyTXEAEysBY.jpg)
 
----
-
-![](ken.jpg)
 
 ---
 
@@ -34,13 +31,15 @@ export const transition = ['zoom']
 
 # Heading 1
 
-# Heading 2
+## Heading 2
 
-# Heading 3
+### Heading 3
 
-# Heading 4
+#### Heading 4
 
-# Heading 5
+##### Heading 5
+
+###### Heading 6
 
 Standard Text
 
@@ -66,7 +65,7 @@ export default CodeSlide
 class SuperCoolComponent extends React.Component {
   render() {
     return (
-      <p>lol this talk is dumb tho</p>
+      <p>code slide works in markdown too whaaaaat</p>
     );
   }
 }

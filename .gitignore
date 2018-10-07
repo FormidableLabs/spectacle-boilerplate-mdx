@@ -2,6 +2,3 @@
 node_modules
 npm-debug.log
 dist
-.vscode
-yarn.lock
-package-lock.json

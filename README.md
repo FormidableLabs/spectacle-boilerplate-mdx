@@ -12,6 +12,12 @@ The Spectacle core API is available at [https://github.com/FormidableLabs/specta
 
 For more information about MDX syntax and how it all works, check out the [MDX documentation](https://mdxjs.com/).
 
+### Slides
+
+Slides are separated with `---`.
+
+To customize specific MDX functionality in Spectacle Boilerplate MDX, including what characters are used to demarcate slide breaks, refer to the `loader.js` file. We don't recommend altering this functionality unless necessary.
+
 ## Getting Started
 
 After downloading the boilerplate, your first order of business is to open a terminal and run 
@@ -38,7 +44,7 @@ or
 npm start
 ```
 
-Open a browser and hit [http://localhost:3000](http://localhost:3000), and you're ready to roll.
+Open a browser and hit [http://localhost:3000](http://localhost:3000), and you're ready to roll. Modify `index.mdx` to see changes, but the best part about MDX is that you can create your own React components and import them into the `index.mdx` file to seamlessly integrate with markdown!
 
 ## Build & Deployment
 

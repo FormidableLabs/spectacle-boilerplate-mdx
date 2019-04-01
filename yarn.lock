@@ -1944,9 +1944,10 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-create-react-context@^0.2.2:
+create-react-context@^0.2.2, create-react-context@^0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/create-react-context/-/create-react-context-0.2.3.tgz#9ec140a6914a22ef04b8b09b7771de89567cb6f3"
+  integrity sha512-CQBmD0+QGgTaxDL3OX1IDXYqjkp2It4RIbcb99jS6AEg27Ga+a9G3JtK6SIu0HBwPLZlmwt9F7UwWA4Bn92Rag==
   dependencies:
     fbjs "^0.8.0"
     gud "^1.0.0"
@@ -2026,6 +2027,11 @@ css-selector-tokenizer@^0.7.0:
 cssesc@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/cssesc/-/cssesc-0.1.0.tgz#c814903e45623371a0477b40109aaafbeeaddbb4"
+
+csstype@^2.6.0:
+  version "2.6.3"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.3.tgz#b701e5968245bf9b08d54ac83d00b624e622a9fa"
+  integrity sha512-rINUZXOkcBmoHWEyu7JdHu5JMzkGRoMX4ov9830WNgxf5UYxcBUO0QTKAqeJ5EZfSdlrcJYkC8WwfVW7JYi4yg==
 
 currently-unhandled@^0.4.1:
   version "0.4.1"
@@ -5194,12 +5200,14 @@ react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
 
-react-live@^1.11.0:
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/react-live/-/react-live-1.11.0.tgz#257b54abb64df250bc40b0572c21acd600ecdd5c"
+react-live@^1.12.0:
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/react-live/-/react-live-1.12.0.tgz#2876d4e913331002b66dfa73cf58051376bc2518"
+  integrity sha512-zFEpY01fJORF0IiyONqvjwPLBBDp155Ive6tU8ZmetmT2p4XWUKHstnlu4Cayia+n7iu58Owytztu43yvSin8g==
   dependencies:
     buble "^0.19.3"
     core-js "^2.4.1"
+    create-react-context "^0.2.3"
     dom-iterator "^1.0.0"
     prismjs "1.6"
     prop-types "^15.5.8"
@@ -5908,10 +5916,12 @@ spectacle-renderer@^0.0.3:
     puppeteer "^0.12.0"
     yargs "^9.0.1"
 
-spectacle@5.2.2:
-  version "5.2.2"
-  resolved "https://registry.yarnpkg.com/spectacle/-/spectacle-5.2.2.tgz#b5e717c85db47fe5dd267ff6562b9463b24fc1bc"
+spectacle@5.4.0:
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/spectacle/-/spectacle-5.4.0.tgz#01f7aab5d4fb54bde82066be0fbbb87fe6737fcc"
+  integrity sha512-cazr4CZkTdb7FXAoLkPvTYDam1wwzw5s8O72lREO3HiGYK8Eg7wrg4vy+w9et401XXQWEcRzQOmEp91sWIjPJQ==
   dependencies:
+    csstype "^2.6.0"
     deep-object-diff "^1.0.4"
     emotion "^8.0.8"
     history "^4.6.1"
@@ -5920,7 +5930,7 @@ spectacle@5.2.2:
     normalize.css "^7.0.0"
     prismjs "1.6.0"
     react-emotion "^8.0.8"
-    react-live "^1.11.0"
+    react-live "^1.12.0"
     react-redux "^5.0.5"
     react-transition-group "1.2.1"
     react-typography "^0.16.5"

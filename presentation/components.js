@@ -1,5 +1,5 @@
-import React, { createElement, Component } from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 import {
   Heading,
@@ -19,7 +19,7 @@ import {
   TableHeaderItem,
   TableBody,
   TableItem
-} from 'spectacle';
+} from "spectacle";
 
 
 const _Heading = size => {
@@ -42,18 +42,22 @@ const _CombineBlockQuote = ({ children }) => (
 
 _CombineBlockQuote.propTypes = { children: PropTypes.node };
 
-const _CodePane = ({ children, language }) => (
+const _CodePane = ({ children }) => (
   <CodePane theme="external" lang="javascript" source={children} />
 );
 
-_CodePane.propTypes = { code: PropTypes.string, language: PropTypes.string };
+_CodePane.propTypes = {
+  children: PropTypes.node,
+  code: PropTypes.string,
+  language: PropTypes.string
+};
 
 export default {
   a: Link,
   blockquote: _CombineBlockQuote,
   code: _CodePane,
-  del: _S('strikethrough'),
-  em: _S('italic'),
+  del: _S("strikethrough"),
+  em: _S("italic"),
   h1: _Heading(1),
   h2: _Heading(2),
   h3: _Heading(3),
@@ -64,7 +68,7 @@ export default {
   codespan: Code,
   li: ListItem,
   p: Text,
-  strong: _S('bold'),
+  strong: _S("bold"),
   ul: List,
   table: Table,
   thead: TableHeader,

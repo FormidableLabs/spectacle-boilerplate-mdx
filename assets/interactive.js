@@ -29,15 +29,15 @@ export default class Interactive extends Component {
     };
     return (
       <div>
-      {this.state.count < 5 ?
-        <div>
-          <Heading fit size={5} textColor="black">
-            The button has been clicked {this.state.count} times
-          </Heading>
-          <button style={styles} type="button" onClick={this.handleClick}>Click Me</button>
-        </div> :
+        {this.state.count < 5 ? (
+          <div>
+            <Heading fit size={5} textColor="black">
+              The button has been clicked {this.state.count} times
+            </Heading>
+            <button style={styles} type="button" onClick={this.handleClick}>Click Me</button>
+          </div>) : (
           <Heading size={5} fit caps textColor="black">Easy there pal</Heading>
-        }
+        )}
       </div>
     );
   }

@@ -1,8 +1,8 @@
-import React from 'react';
-import { Slide, Text, Heading } from 'spectacle';
-import { MDXProvider } from '@mdx-js/tag'
-import components from './components';
-import theme from './theme';
+import React from "react";
+import { Slide, Text, Heading } from "spectacle";
+import { MDXProvider } from "@mdx-js/tag";
+import components from "./components";
+import theme from "./theme";
 
 // DEFAULT LAYOUT
 
@@ -22,7 +22,7 @@ const darkComponents = {
   h5: ({ children }) => <Heading size={5} textColor={theme.screen.colors.quaternary}>{children}</Heading>,
   h6: ({ children }) => <Heading size={6} textColor={theme.screen.colors.quaternary}>{children}</Heading>,
   p: ({ children }) => <Text textColor="white">{children}</Text>
-}
+};
 
 export const DarkSlide = ({ children, ...rest }) => (
   <Slide bgColor="black" {...rest}>
@@ -37,3 +37,4 @@ export const CodeSlide = ({ children, ...rest }) => (
     <MDXProvider components={components}>{children}</MDXProvider>
   </Slide>
 );
+

@@ -1,15 +1,15 @@
-import React from 'react';
-import { Heading, Text } from 'spectacle';
+import React from "react";
+import { Heading, Text } from "spectacle";
 
 export default class RegularComponent extends React.Component {
   state = {
     count: 0
   };
 
-  incrementCount = () => {
+  handleIncrementCount = () => {
     this.setState(state => ({
       count: state.count + 1
-    }))
+    }));
   }
 
   render() {
@@ -23,8 +23,8 @@ export default class RegularComponent extends React.Component {
         <br />
         <Text>Click the button to rate how cool that is from 1-10</Text>
         <br />
-        <button type="button" onClick={this.incrementCount}>Rate It</button>
+        <button type="button" onClick={this.handleIncrementCount}>Rate It</button>
       </div>
-    )
+    );
   }
 }

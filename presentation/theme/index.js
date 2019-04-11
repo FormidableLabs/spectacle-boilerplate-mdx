@@ -1,4 +1,4 @@
-import createTheme from '../../createTheme';
+import createTheme from '../../create-theme';
 
 const colors = {
   primary: 'white',

@@ -7,6 +7,7 @@ export default class RegularComponent extends React.Component {
   };
 
   handleIncrementCount = () => {
+    // eslint-disable-next-line no-invalid-this
     this.setState(state => ({
       count: state.count + 1
     }));

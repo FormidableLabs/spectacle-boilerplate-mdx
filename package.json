@@ -11,17 +11,19 @@
     "export": "spectacle-renderer --delay 3000",
     "start": "cross-env NODE_ENV=development node server.js"
   },
+  "linters": {
+    "*.{js,json,css,mdx}": [
+      "prettier --write"
+    ]
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "*.{js,json,css,md, mdx}": [
+    "*.js,json,css,mdx}": [
       "prettier --write"
-    ],
-    "ignore": [
-      "node_modules"
     ]
   },
   "author": "",

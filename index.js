@@ -1,13 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
-import ReactDOM from "react-dom";
-import { AppContainer } from "react-hot-loader";
-import Redbox from "redbox-react";
-import { Deck } from "spectacle";
-import slides, { transitions } from "./presentation/index.mdx";
-import theme from "./presentation/theme";
+import React from 'react';
+import PropTypes from 'prop-types';
+import ReactDOM from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
+import Redbox from 'redbox-react';
+import { Deck } from 'spectacle';
+import slides, { transitions } from './presentation/index.mdx';
+import theme from './presentation/theme';
 
-require("normalize.css");
+require('normalize.css');
 
 const CustomErrorReporter = ({ error }) => <Redbox error={error} />;
 
@@ -26,30 +26,38 @@ const creeperTransition = (transitioning, forward) => {
 
 ReactDOM.render(
   <AppContainer errorReporter={CustomErrorReporter}>
-    <Deck transition={[creeperTransition]} transitionDuration={500} theme={theme}>
+    <Deck
+      transition={[creeperTransition]}
+      transitionDuration={500}
+      theme={theme}
+    >
       {slides.map((S, i) => {
         const transition = transitions[i] || null;
         return <S transition={transition} key={`slide-${i}`} />;
       })}
     </Deck>
   </AppContainer>,
-  document.getElementById("root"),
+  document.getElementById('root')
 );
 
 if (module.hot) {
   module.hot.accept(() => {
-    const newTheme = require("./presentation/theme").default;
-    const newSlides = require("./presentation/index.mdx").default;
+    const newTheme = require('./presentation/theme').default;
+    const newSlides = require('./presentation/index.mdx').default;
     ReactDOM.render(
       <AppContainer errorReporter={CustomErrorReporter}>
-        <Deck transition={[creeperTransition]} transitionDuration={500} theme={newTheme}>
+        <Deck
+          transition={[creeperTransition]}
+          transitionDuration={500}
+          theme={newTheme}
+        >
           {newSlides.map((S, i) => {
             const transition = transitions[i] || null;
             return <S transition={transition} key={`slide-${i}`} />;
           })}
         </Deck>
       </AppContainer>,
-      document.getElementById("root"),
+      document.getElementById('root')
     );
   });
 }

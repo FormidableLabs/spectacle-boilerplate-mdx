@@ -1,5 +1,5 @@
-import createSpectacleTheme from "spectacle/lib/themes/default";
-import merge from "deepmerge";
+import createSpectacleTheme from 'spectacle/lib/themes/default';
+import merge from 'deepmerge';
 
 const createTheme = (colors, fonts, overrides = {}) => {
   const t = createSpectacleTheme(colors, fonts);

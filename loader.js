@@ -1,15 +1,17 @@
-const { getOptions } = require("loader-utils");
-const mdx = require("@mdx-js/mdx");
-const matter = require("gray-matter");
-const normalizeNewline = require("normalize-newline");
+const { getOptions } = require('loader-utils');
+const mdx = require('@mdx-js/mdx');
+const matter = require('gray-matter');
+const normalizeNewline = require('normalize-newline');
 
 const EXREG = /export\sdefault\s\(/g;
 const MODREG = /^(import|export)\s/;
 const SLIDEREG = /\n---\n/;
 const TRANSREG = /^export const transition.*\s(.*)/;
-const hasDefaultExport = (str) => { (/export default/).test(str); };
+const hasDefaultExport = str => {
+  /export default/.test(str);
+};
 
-const defaultLayout = (str) => {
+const defaultLayout = str => {
   if (!hasDefaultExport(str)) {
     str = `import {DefaultSlide} from './slides'
 
@@ -20,7 +22,7 @@ const defaultLayout = (str) => {
   return str;
 };
 
-module.exports = async function (src) {
+module.exports = async function(src) {
   const callback = this.async();
   const options = getOptions(this) || {};
 
@@ -34,9 +36,9 @@ module.exports = async function (src) {
     .map(str => defaultLayout(str))
     .map(str => mdx.sync(str, options))
     .map(str => str.trim())
-    .map(str => str.replace(EXREG, "("))
+    .map(str => str.replace(EXREG, '('))
     .map(str => {
-      const lines = str.split("\n");
+      const lines = str.split('\n');
       let transition = null;
       lines.forEach(line => {
         const match = line.match(TRANSREG);
@@ -47,37 +49,37 @@ module.exports = async function (src) {
 
       transitions.push(transition);
 
-      return lines.filter(() => !TRANSREG.test(str))
+      return lines
+        .filter(() => !TRANSREG.test(str))
         .filter(Boolean)
-        .join("\n");
+        .join('\n');
     })
     .map(str => {
-      const lines = str.split("\n");
-      inlineModules.push(
-        ...lines.filter(() => MODREG.test(str))
-      );
-      return lines.filter(() => !MODREG.test(str))
+      const lines = str.split('\n');
+      inlineModules.push(...lines.filter(() => MODREG.test(str)));
+      return lines
+        .filter(() => !MODREG.test(str))
         .filter(Boolean)
-        .join("\n");
+        .join('\n');
     });
 
-  const {
-    modules = []
-  } = data;
+  const { modules = [] } = data;
 
   const code = `import React from 'react';
     import { MDXTag } from '@mdx-js/tag';
-    ${modules.join("\n")}
-    ${inlineModules.filter(function (el, i, arr) {
-    return arr.indexOf(el) === i;
-  }).join("\n")}
+    ${modules.join('\n')}
+    ${inlineModules
+      .filter(function(el, i, arr) {
+        return arr.indexOf(el) === i;
+      })
+      .join('\n')}
 
     export const transitions = [
-      ${transitions.join(",")}
+      ${transitions.join(',')}
     ];
 
     export default [
-      ${slides.join(",\n\n")}
+      ${slides.join(',\n\n')}
   ]`;
 
   return callback(null, code);

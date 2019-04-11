@@ -1,20 +1,20 @@
 /* eslint-disable */
 
-var path = require("path");
-var webpack = require("webpack");
+var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
-  mode: "production",
-  entry: ["babel-polyfill", "./index"],
+  mode: 'production',
+  entry: ['babel-polyfill', './index'],
   output: {
-    path: path.join(__dirname, "dist"),
-    filename: "bundle.js",
-    publicPath: "/dist/"
+    path: path.join(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: '/dist/'
   },
   plugins: [
     new webpack.DefinePlugin({
-      "process.env": {
-        NODE_ENV: JSON.stringify("production")
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
       }
     })
   ],
@@ -25,32 +25,32 @@ module.exports = {
     rules: [
       {
         test: /\.md$/,
-        loader: "html-loader!markdown-loader?gfm=false"
+        loader: 'html-loader!markdown-loader?gfm=false'
       },
       {
         test: /\.mdx$/,
         exclude: /node_modules/,
         use: [
-          { loader: "babel-loader" },
-          { loader: require.resolve("./loader.js") }
+          { loader: 'babel-loader' },
+          { loader: require.resolve('./loader.js') }
         ]
       },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader: "babel-loader"
+        loader: 'babel-loader'
       },
       {
         test: /\.css$/,
-        loader: "style-loader!css-loader"
+        loader: 'style-loader!css-loader'
       },
       {
         test: /\.(png|jpg|gif)$/,
-        loader: "url-loader?limit=8192"
+        loader: 'url-loader?limit=8192'
       },
       {
         test: /\.svg$/,
-        loader: "url-loader?limit=10000&mimetype=image/svg+xml"
+        loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
       }
     ]
   }

@@ -42,9 +42,11 @@ const _CombineBlockQuote = ({ children }) => (
 
 _CombineBlockQuote.propTypes = { children: PropTypes.node };
 
-const _CodePane = ({ children, language }) => (
-  <CodePane theme="external" lang="javascript" source={children} />
-);
+// Do not change this component if you want proper syntax highlighting in MDX
+const _CodePane = ({ children, className }) => {
+  const language = className.replace(/language-/, '')
+  return <CodePane theme="external" lang={language} source={children} />
+};
 
 _CodePane.propTypes = { code: PropTypes.string, language: PropTypes.string };
 

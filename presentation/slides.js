@@ -1,5 +1,5 @@
 import React from 'react';
-import { Slide, Text, Heading } from 'spectacle';
+import { Slide, Text, Heading, ListItem } from 'spectacle';
 import { MDXProvider } from '@mdx-js/tag'
 import components from './components';
 import theme from './theme';
@@ -21,7 +21,8 @@ const darkComponents = {
   h4: ({ children }) => <Heading size={4} textColor={theme.screen.colors.quaternary}>{children}</Heading>,
   h5: ({ children }) => <Heading size={5} textColor={theme.screen.colors.quaternary}>{children}</Heading>,
   h6: ({ children }) => <Heading size={6} textColor={theme.screen.colors.quaternary}>{children}</Heading>,
-  p: ({ children }) => <Text textColor="white">{children}</Text>
+  p: ({ children }) => <Text textColor="white">{children}</Text>,
+  li: ({children}) => <ListItem textColor="white">{children}</ListItem>
 }
 
 export const DarkSlide = ({ children, ...rest }) => (
